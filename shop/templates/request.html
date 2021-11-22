@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="clear_features">
+        <p style="margin-top: 20px" class="bold_header">Оставить заявку</p>
+        <form method="post">
+            {% csrf_token %}
+            <span style="color: red; font-size: 1.4em">{{ error }}</span>
+            <div class="mb-3">
+                <label for="nameField" class="form-label">Имя:</label>
+                {{ form.user }}
+            </div>
+            <div class="mb-3">
+                <label for="phoneField" class="form-label">Номер телефона:</label>
+                {{ form.phone_number }}
+            </div>
+            <div class="mb-3">
+                <label for="mailField" class="form-label">e-mail:</label>
+                {{ form.email }}
+            </div>
+            <div class="mb-3">
+                <label for="commentField" class="form-label">Комментарий:</label>
+                {{ form.comment }}
+            </div>
+            <button class="btn btn-primary" type="submit">Отправить</button>
+        </form>
+    </div>
+{% endblock %}

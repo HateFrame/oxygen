@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if prod != "Нет такого товара" %}
+        <b class="bold_header">{{ prod.title }}</b>
+        <div class="advert">
+            <table class="adv_table">
+                <tr>
+                    <td>
+                        <div class="product_image">
+                            <img src="https://overcoder.net/img/1/4/56/35595.png">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="product_content">
+                            <p class="product_item_name">{{ prod.title }}</p>
+                            <p class="product_item_block">{{ prod.description }}</p>
+                            <hr class="content_border">
+                            <p class="product_item_block">{{ prod.price }} Рублей в месяц</p>
+                            <hr class="content_border">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    {% else %}
+        <div>
+            <p>{{ prod }}</p>
+        </div>
+    {% endif %}
+{% endblock %}

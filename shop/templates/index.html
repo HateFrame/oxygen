@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <b class="bold_header">Объявления</b>
+    {% for prod in products %}
+        <div class="advert">
+            <div class="adv_content">
+                <table class="adv_table">
+                    <tr>
+                        <td>
+                            <div>
+                                <img class="product_image" src="https://klike.net/uploads/posts/2019-11/1572612050_1.jpg">
+                            </div>
+                        </td>
+                        <td>
+                            <a class="adv_name" href="/product/{{ prod.pk }} ">{{ prod.title }}</a>
+                            <p class="adv_description">{{ prod.description }}</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
